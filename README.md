@@ -10,3 +10,5 @@ in order for Mac with M1 chip to create IOS app, must alter instructions in foll
 6. pod install
 7. cd ../
 8.  npx react-native run-ios     (ensure npx react-native start was run before running this line)
+
+9. workaround for error for newer expo: https://blog.expo.io/expo-sdk-38-is-now-available-ab6cd30ca2ee
