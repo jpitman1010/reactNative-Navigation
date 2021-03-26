@@ -1,14 +1,24 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { Text, View, Button } from 'react-native';
+import { NavigationContainer, useNavigation, useRoute} from '@react-navigation/native';
 
+const Users = () => {
+// const Users = (props) => {
+    const navigation = useNavigation();
+    const route = useRoute();
 
-const Users = (props) => {
+    const {id,codeName} = route.params;
+
     return(
         <View style={{marginTop:50}}>
-            <Text>Users </Text>
+            <Text>ID: {id} </Text>
+            <Text>Codename:{codeName} </Text>
+
             <Button 
-            title="Go Home"
-            onPress={ ()=> props.navigation.goBack() }
+            title="Go Back"
+            onPress={ ()=> navigation.navigate('Home',{
+            active:'yes'} )}
             />
         </View>
     )
