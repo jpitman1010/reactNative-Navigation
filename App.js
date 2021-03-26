@@ -15,6 +15,7 @@ const defaultHeader = {
   headerTintColor:"white",
   headerTitleAlign:'center',
   headerBackTitle: "BackBackBack",
+  headerBackImage: LogoTitle,
   headerStyle:{
     backgroundColor:"red",
     borderWidth: 5,
