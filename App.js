@@ -36,6 +36,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator 
       initialRouteName="Home"
+      mode="modal"
       screenOptions={{
         ...defaultHeader
       }}
