@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import Home from './src/home';
 import Users from './src/users';
 import { Header } from 'react-native/Libraries/NewAppScreen';
@@ -45,11 +45,15 @@ function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen 
         name="Users" 
-        options={{
-          ...defaultHeader,
-          // headerTitle: props=><Text>UserPage</Text>
-          // headerTitle: props=>LogoTitle(props)
-
+        options={{ 
+          headerLeft: ()=> 
+            <Button title="do less"
+            onPress={()=>alert('do less')} 
+            />,
+          headerRight: ()=> 
+            <Button title="do more"
+            onPress={()=>alert('do more')} 
+            />
         }}
         component={Users} 
         initialParams={{id:1,codeName:"Pitboss"}}
