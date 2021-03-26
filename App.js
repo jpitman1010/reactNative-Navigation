@@ -6,6 +6,7 @@ import { Text, View } from 'react-native';
 import Home from './src/home';
 import Users from './src/users';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import LogoTitle from './src/utils/logoTitle';
 
 
 
@@ -19,6 +20,7 @@ const defaultHeader = {
     // color:"white", this doesn't work in header
   
   },
+  headerTitle: props=>LogoTitle(props),
   //  you have to use this (read the docs https://reactnavigation.org/docs/headers) for more options
   headerTitleStyle:{
     fontWeight:'bold',
@@ -40,16 +42,17 @@ function App() {
         <Stack.Screen 
         name="Users" 
         options={{
-          title:"xUsers", 
-          ...defaultHeader
-          
+          ...defaultHeader,
+          // headerTitle: props=><Text>UserPage</Text>
+          // headerTitle: props=>LogoTitle(props)
+
         }}
         component={Users} 
         initialParams={{id:1,codeName:"Pitboss"}}
         //this is used to pass params that might not be there yet...
         />
-
       </Stack.Navigator>
+      <LogoTitle/>
     </NavigationContainer>
   );
 }
