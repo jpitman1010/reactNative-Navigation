@@ -45,16 +45,13 @@ function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen 
         name="Users" 
-        options={{ 
-          headerLeft: ()=> 
-            <Button title="do less"
-            onPress={()=>alert('do less')} 
-            />,
-          headerRight: ()=> 
-            <Button title="do more"
-            onPress={()=>alert('do more')} 
-            />
-        }}
+        options={ ({navigation})=>(
+          {
+            headerLeft:()=> <Button
+            title="go back"
+            onPress={()=> navigation.navigate('Home')}
+          />,
+          })}
         component={Users} 
         initialParams={{id:1,codeName:"Pitboss"}}
         //this is used to pass params that might not be there yet...
