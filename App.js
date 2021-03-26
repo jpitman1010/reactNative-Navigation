@@ -13,6 +13,8 @@ import LogoTitle from './src/utils/logoTitle';
 const Stack = createStackNavigator();
 const defaultHeader = {
   headerTintColor:"white",
+  headerTitleAlign:'center',
+  headerBackTitle: "BackBackBack",
   headerStyle:{
     backgroundColor:"red",
     borderWidth: 5,
